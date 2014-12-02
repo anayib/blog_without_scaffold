@@ -1,4 +1,4 @@
-<h1>Posts#index</h1>
+<h1>Todos los posts</h1>
 <table>
 	<thead>
 
@@ -8,8 +8,21 @@
       <th>PUBLICADO</th>
       <th>CONTENIDO</th>
       <th>AUTOR</th>
-		</tr>
-		
+		</tr>	
 	</thead>
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.titulo %></td>
+        <td><%= post.fecha %></td>
+        <td><%= post.publicado %></td>
+        <td><%= post.contenido %></td>
+        <td><%= post.user_id%></td>
+        <td><%= link_to 'mostrar post', post%></td>
+        <td><%= link_to 'editar post', edit_post_path(post) %></td>
+        <td><%= link_to 'eliminar post', post, method: :delete, data: {confrim: 'seguro que quieres eliminar este post?'}%></td>
+      </tr>
+    <% end -%>
+  </tbody>
 
 </table>
