@@ -2,14 +2,14 @@
 
 one:
   titulo: MyString
-  fecha: 
+  fecha: 2014-12-02
   publicado: false
   contenido: MyText
   user_id: 1
 
 two:
   titulo: MyString
-  fecha: 
+  fecha: 2014-12-02
   publicado: false
   contenido: MyText
   user_id: 1
