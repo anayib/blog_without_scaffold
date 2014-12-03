@@ -1,6 +1,6 @@
     <h1>Crear un  nuevo  Post</h1>
     <!-- <p>Find me in app/views/posts/create.html.erb</p> -->
-  <%= form_for @post, url: {action: "create"} do |f| %>
+  <%= form_for(@post) do |f| %>
 
   <div>
     <%=f.label :titulo_del_post%> <br>

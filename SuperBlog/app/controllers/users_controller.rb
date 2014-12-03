@@ -48,10 +48,11 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user= User.find(params[:id]) 
+
+    @user= User.find(params[:id])
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'Se ha eliminado el autor exitosamente' }
+      format.html { redirect_to users_url, notice: 'Se ha eliminado el autor exitosamente.' }
       format.json { head :no_content }
     end
   end

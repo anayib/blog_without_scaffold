@@ -1,4 +1,6 @@
+<p id="notice"><%= notice %></p>
 <h1>Todos los posts</h1>
+<%= link_to 'crear un nuevo post', new_post_path%>
 <table>
 	<thead>
 
@@ -8,6 +10,7 @@
       <th>PUBLICADO</th>
       <th>CONTENIDO</th>
       <th>AUTOR</th>
+      
 		</tr>	
 	</thead>
   <tbody>
@@ -18,7 +21,7 @@
         <td><%= post.publicado %></td>
         <td><%= post.contenido %></td>
         <td><%= post.user_id%></td>
-        <td><%= link_to 'mostrar post', post%></td>
+        <td><%= link_to 'mostrar post', post %> </td>
         <td><%= link_to 'editar post', edit_post_path(post) %></td>
         <td><%= link_to 'eliminar post', post, method: :delete, data: {confrim: 'seguro que quieres eliminar este post?'}%></td>
         <td><%= link_to 'crear un nuevo post', new_post_path%></td>

@@ -1,2 +1,27 @@
-<h1>Posts#show</h1>
-<p>Find me in app/views/posts/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <strong>titulo:</strong>
+  <%= @post.titulo %>
+</h1>
+
+<h2>
+  <strong>Autor:</strong>
+  <%= @post.user.nombre%> <br>
+   <strong>Correo:</strong>
+  <%= @post.user.email%>
+</h2>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @post.fecha%>
+</p>
+
+<p>
+  <strong>se encuentra publicado:</strong>
+  <%= @post.publicado%>
+</p>
+
+<%= link_to 'Editar Post', edit_post_path(@post) %> |
+<%= link_to 'ver todos los posts', posts_path %>
+
