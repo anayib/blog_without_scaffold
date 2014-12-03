@@ -24,7 +24,12 @@
     <%=f.check_box :publicado%>
   </div>
  
-   <div class="actions" > 
+  <div>
+  <% if current_page?(:action => 'new') %> 
     <%= f.submit "CREAR EL POST" ,class: ""%>
+    <% else %>
+    <%= f.submit "MODIFICAR EL POST" ,class: ""%>
+    <% end %>
+
   </div>
   <% end %>

@@ -19,8 +19,12 @@
     <%=f.text_field :empresa%>
   </div>
     <div class="actions" > 
+
+    <% if current_page?(:action => 'new') %>
     
     <%= f.submit "CREAR NUEVO AUTOR", class: ""%>
+    <%else%>
     <%= f.submit "MODIFICAR NUEVO AUTOR", class: ""%>
+    <% end %>
   </div>
   <% end %>
