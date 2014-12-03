@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @user.nombre %>
+</p>
+
+<p>
+  <strong>Apellido:</strong>
+  <%= @user.apellido %>
+</p>
+
+<p>
+  <strong>email:</strong>
+  <%= @user.email%>
+</p>
+
+<p>
+  <strong>empresa:</strong>
+  <%= @user.empresa%>
+</p>
+
+<%= link_to 'Editar autor', edit_user_path(@user) %> |
+<%= link_to 'ver todos los autores', users_path %>
