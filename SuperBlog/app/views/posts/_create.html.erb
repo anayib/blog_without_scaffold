@@ -1,6 +1,10 @@
     <h1>Crear un  nuevo  Post</h1>
     <!-- <p>Find me in app/views/posts/create.html.erb</p> -->
-  <%= form_for(@post) do |f| %>
+
+
+  <%= form_for(@post, remote: true) do |f| %>
+
+  <!-- el remote: true le está indicando que el formato que debe renderizar el controlador  es java script para la accion asociada al form -->
 
   <div>
     <%=f.label :titulo_del_post%> <br>
@@ -16,7 +20,7 @@
   </div>
   <div>
     <%=f.label :escribe_el_contenido_del_post%> <br>
-    <%=f.text_area :contenido, size: "200x20" %>
+    <%=f.text_area :contenido, size: "40x10" %>
   </div>  
 
   <div>
@@ -26,9 +30,9 @@
  
   <div>
   <% if current_page?(:action => 'new') %> 
-    <%= f.submit "CREAR EL POST" ,class: ""%>
+    <%= f.submit "CREAR EL POST" ,class: "btn btn-success"%>
     <% else %>
-    <%= f.submit "MODIFICAR EL POST" ,class: ""%>
+    <%= f.submit "MODIFICAR EL POST" ,class: "btn btn-success" %>
     <% end %>
 
   </div>

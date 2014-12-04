@@ -1,10 +1,14 @@
-<!--<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p> -->
+<!-- este archivo se podría borrar porque ya el controlador
+no está enrutando con respond_to hacía post/new sino que
+va a tomar el archivo new.js.erb porque al form se le puso el 
+método remote: true -->
 
 <h1>New post</h1>
 
 <%= render 'create' %>
+<!-- esta linea rederiza el _create.html.erb en el que está el form-->
 <br>
 
 <%= link_to 'Back', posts_path%>
+
 

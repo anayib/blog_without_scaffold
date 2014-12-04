@@ -1,4 +1,8 @@
 class PostsController < ApplicationController
+
+  respond_to :html ,  :js 
+
+
   def index
     @posts=Post.all
   end
@@ -20,35 +24,11 @@ class PostsController < ApplicationController
   end
 
   def create
-    
-    @post = Post.new(post_params)
-
-     respond_to do |format|
-      if @post.save
-        format.html { redirect_to @post, notice: 'El post fue creado exitosamente' }
-        format.json { render :show, status: :created, location: @post }
-      else
-        format.html { render :new , notiece: 'El post no ha se ha creado, vuelva a intentarlo o comuniquese con el administrador del sitio si el problema persiste'}
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
-    end
-
-
+    @post = Post.create(post_params)
   end
 
   def update
-
-    @post = Post.find(params[:id])
-
-    respond_to do |format|
-      if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'El post se actualizó correctamente' }
-        format.json { render :show, status: :ok, location: @post }
-      else
-        format.html { render :edit }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
-      end
-    end
+    @post = Post.update(params[:id], post_params)
   end
 
   def destroy
@@ -57,6 +37,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to posts_url, notice: 'El post fue destruido exitosamente' }
       format.json { head :no_content }
+      
     end
   end
 
