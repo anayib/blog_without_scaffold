@@ -9,8 +9,10 @@ Para que lo tome toca modificar el rdirect_to  */
 	<% end %>
 <% else %>
 
-	$('#x').show();
+	
 
-	$('#idParaAppend').append('<tr><%=j render "appendCreate"%></tr>');
+	$('#<%= @post.id %>').html('<%=j render "appendCreate"%>');
+
+	$('#update').show();
         
 <%end%>

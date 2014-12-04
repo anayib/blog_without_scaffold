@@ -25,14 +25,14 @@
 	</thead>
   <tbody id= "idParaAppend">
     <% @posts.each do |post| %>
-      <tr>
+      <tr id = <%= post.id %>>
         <td><%= post.titulo %></td>
         <td><%= post.fecha %></td>
         <td><%= post.publicado %></td>
         <td><%= post.contenido %></td>
         <td><%= post.user.nombre%></td>
         <td><%= link_to 'mostrar post', post,  class: "btn btn-info"%> </td>
-        <td><%= link_to 'editar post', edit_post_path(post), class: "btn btn-default" %></td>
+        <td><%= link_to 'editar post', edit_post_path(post), remote: true, class: "btn btn-default" %></td>
         <td><%= link_to 'eliminar post', post, method: :delete, data: {confrim: 'seguro que quieres eliminar este post?'},class: "btn btn-default" %></td>
       </tr>
     <% end -%>

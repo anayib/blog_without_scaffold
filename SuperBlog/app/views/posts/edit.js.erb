@@ -1,0 +1,10 @@
+/* working with java script in rails. 
+Aquí estamos llamando el metodo de modal de  bootstrap: 
+http://getbootstrap.com/javascript/#modals  esto via Java Script  */
+
+$("<%= j render 'modal'%>").modal();
+
+/* la j hace referencia a escape_javascript para que
+pueda renderizar un archivo que viene en diferentes líneas
+modal es el nombre del archivo _modal.htm.erb al que le voy a hacer render 
+.modal() es el método para mostral el modal , viene en la gem de bootstrap*/
