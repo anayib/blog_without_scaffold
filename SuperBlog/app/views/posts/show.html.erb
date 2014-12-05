@@ -1,28 +1,77 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>template_posts</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+        <style>
+           p {font-size: 18px;
 
-<h1>
-  <strong>titulo:</strong>
-  <%= @post.titulo %>
-</h1>
+            margin-bottom: 30px;
+            margin-top: 30px;}
+        </style>
+    
+    </head> 
+    <!-- notificacion de mensajes inicia -->
+    <p id="notice"><%= notice %></p>
 
-<h2>
-  <strong>Autor:</strong>
-  <%= @post.user.nombre%> <br>
-   <strong>Correo:</strong>
-  <%= @post.user.email%>
-</h2>
+    <!-- notificacion de mensajes termina -->
+    
 
-<p>
-  <strong>Fecha:</strong>
-  <%= @post.fecha%>
-</p>
+  <!--inicia titulo deberá revisar el post -->
 
-<p>
-  <strong>se encuentra publicado:</strong>
-  <%= @post.publicado%>
-</p>
+    <div class="container" style="line-height:1.8;">
+        <div class="row">
+            <div class="col-md-7" >
+                <h2><%= @post.titulo %></h2> <!--titulo -->
+                <h4>consultas de este recurso| 2300</h4><!--consultas-->
+                <h3><%= @post.fecha%> <h3><!--fecha -->
+                <hr>
+                <hr>
+                <p>
+                  <strong>Sabias que ...</strong>
+                    <%= @post.contenido%><!--contenido -->
+                </p>
+            </div>
+          <div class="col-md-1"></div>
+          <div class="col-md-4" >
+                <h4>VIA <spam><%= @post.user.email%></spam>   </h4>
+                <hr>
+                <img style="border-radius:50%; position:float-left; margin-left: 1px;
+                margin-bottom: 20px;"src="http://lorempixel.com/150/150/people/" alt=""><p style="font-size:13px; color: #7f8c8d;"><em>
+                <!-- bio autor -->  
+                </em></p>
+                <p>
+                  <strong>Fecha:</strong>
+                  <%= @post.fecha%>
+                </p>
 
-<%= link_to 'Editar Post', edit_post_path(@post) %> |
-<%= link_to 'ver todos los posts', posts_path %>
+          </div>
+        
+        </div> 
+        
+        <%= link_to 'ver todos los posts', posts_path, class: "btn btn-info"%> 
+    </div>
 
 
+    <div class="container-fluid" style="line-height:1.8;">
+        <div class="row">
+            <div class="col-md-2" > </div>
+            <div class="col-md-8" style="text-align:center;">
+                <h4>quieres saber más de nosotros?</h4>
+                    <button style= "margin-bottom:20px; margin-top:20px;"type="button" id="firstbutton" class="btn btn-success" btn-group-justified>
+                        <a target="_blank" style="color:white; margin-bottom:20px;" href="http://www.venturebites.com">conoce Super_Blog</a>
+                    </button>
+            </div>
+            <div class="col-md-2" > </div>
+
+        </div>
+    </div>
+
+   
+</html>
