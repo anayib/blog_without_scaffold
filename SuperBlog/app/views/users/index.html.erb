@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+<h1>Todos los Autores</h1>
+<%= link_to 'crear un nuevo user', new_user_path%>
+<table>
+	<thead>
+
+		<tr>
+			<th>NOMBRE</th>
+      <th>APELLIDO</th>
+      <th>EMAIL</th>
+      <th>EMPRESA</th>
+      <th>MOSTRAR AUTOR</th>
+      <th>EDITAR AUTOR</th>
+      <th>ELIMINAR AUTOR</th>
+      
+		</tr>	
+	</thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.nombre %></td>
+        <td><%= user.apellido %></td>
+        <td><%= user.email %></td>
+        <td><%= user.empresa %></td>
+        <td><%= link_to 'mostrar user', user %></td>
+        <td><%= link_to 'editar user', edit_user_path(user) %></td>
+        <td><%= link_to 'eliminar user', user, method: :delete, data: {confrim: 'seguro que quieres eliminar este autor?'}%></td>
+      </tr>
+    <% end -%>
+  </tbody>
+
+
+</table>

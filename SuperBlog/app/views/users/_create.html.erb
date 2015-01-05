@@ -1,0 +1,30 @@
+    <h1>Crear un nuevo Autor</h1>
+    <!-- <p>Find me in app/views/posts/create.html.erb</p> -->
+  <%= form_for @user do |f| %>
+
+  <div>
+    <%=f.label :Nombre_del_autor%> <br>
+    <%=f.text_field :nombre %>
+  </div>
+  <div>
+    <%=f.label :Apellido_del_autor%> <br>
+    <%=f.text_field :apellido %>
+  </div>
+   <div>
+    <%=f.label :email_del_autor%> <br>
+    <%=f.text_field :email%>
+  </div>
+   <div>
+    <%=f.label :empresa_en_la_que_trabaja_el_autor%> <br>
+    <%=f.text_field :empresa%>
+  </div>
+    <div class="actions" > 
+
+    <% if current_page?(:action => 'new') %>
+    
+    <%= f.submit "CREAR NUEVO AUTOR", class: ""%>
+    <%else%>
+    <%= f.submit "MODIFICAR NUEVO AUTOR", class: ""%>
+    <% end %>
+  </div>
+  <% end %>

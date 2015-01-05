@@ -1,0 +1,39 @@
+    <h1>Crear un  nuevo  Post</h1>
+    <!-- <p>Find me in app/views/posts/create.html.erb</p> -->
+
+
+  <%= form_for(@post, remote: true) do |f| %>
+
+  <!-- el remote: true le está indicando que el formato que debe renderizar el controlador  es java script para la accion asociada al form -->
+
+  <div>
+    <%=f.label :titulo_del_post%> <br>
+    <%=f.text_field :titulo %>
+  </div>
+   <div>
+    <%=f.label :Selecciona_el_autor%> <br>
+    <%=f.collection_select :user_id, User.all, :id, :nombre, prompt:"selecciona el autor" %>
+  </div>
+  <div>
+    <%=f.label :selecciona_la_fecha_de_creación%> <br>
+    <%=f.datetime_select :fecha  %>
+  </div>
+  <div>
+    <%=f.label :escribe_el_contenido_del_post%> <br>
+    <%=f.text_area :contenido, size: "40x10" %>
+  </div>  
+
+  <div>
+    <%= f.label :selecciona_la_casilla_si_quieres_que_aparezca_publicado %>
+    <%=f.check_box :publicado%>
+  </div>
+ 
+  <div>
+  <% if current_page?(:action => 'new') %> 
+    <%= f.submit "CREAR EL POST" ,class: "btn btn-success"%>
+    <% else %>
+    <%= f.submit "MODIFICAR EL POST" ,class: "btn btn-success" %>
+    <% end %>
+
+  </div>
+  <% end %>

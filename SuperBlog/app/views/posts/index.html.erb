@@ -1,0 +1,48 @@
+<% if notice != nil  %>
+  <p id="notice" class="alert alert-success" ><%= notice %></p>
+<% end %>
+
+
+<div class="container">
+  
+
+<h1>Todos los posts</h1>
+<div>
+  <td><%= link_to 'crear un nuevo post', new_post_path, remote: true, style:"float:right", class: "btn btn-success"%></td>
+  <!-- el remote: true le está indicando que el formato que debe renderizar el controlador es java script-->
+</div>
+
+<table class="table table-condensed">
+	<thead>
+
+		<tr>
+			<th>TITULO</th>
+      <th>FECHA</th>
+      <th>PUBLICADO</th>
+      <th>CONTENIDO</th>
+      <th>AUTOR</th>
+      
+		</tr>	
+	</thead>
+  <tbody id= "idParaAppend">
+    <% @posts.each do |post| %>
+      <tr id = <%= post.id %>>
+        <td><%= post.titulo %></td>
+        <td><%= post.fecha %></td>
+        <td><%= post.publicado %></td>
+        <td><%= post.contenido %></td>
+        <td><%= post.user.nombre%></td>
+        <td><%= link_to 'mostrar post', post,  class: "btn btn-info"%> </td>
+        <td><%= link_to 'editar post', edit_post_path(post), remote: true, class: "btn btn-default" %></td>
+        <td><%= link_to 'eliminar post', post, method: :delete, data: {confrim: 'seguro que quieres eliminar este post?'},class: "btn btn-default" %></td>
+      </tr>
+    <% end -%>
+  </tbody>
+
+</table>
+</div>
+
+
+
+
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SuperBlog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+ 
+  <!-- navbar inicia-->
+      <nav class="navbar navbar-default" role="navigation">
+      <div class="container-fluid" id="navbarCSS">
+       <div class="navbar-header" >
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#" id="brand-style" ><strong>Super_</strong><span id="span-block" >Blog</span></a>
+       </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="http://www.leaninnovationgroup.com/form/form.html">Contactarlos</a></li>
+        </ul> 
+        </div>
+     </div><!-- /.container-fluid -->
+   </nav><!--finaliza el navbar -->
+
+  
+ <%=yield %>
+
+ <footer>
+        <hr>
+        <p style="text-align:center;">Super_Blog|2014 All rights reserved</p>
+        
+ </footer>
+
+</body>
+
+ 
+</html>
